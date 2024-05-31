@@ -1,0 +1,128 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "./client"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  firstName String   @db.VarChar(100)
+  lastName  String   @db.VarChar(100)
+  email     String   @unique
+  password  String   @db.VarChar(120)
+  role      UserRole @default(CUSTOMER)
+  blocked   Boolean  @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  image String? @default("") @db.VarChar(255)
+
+  orders           Order[]
+  billingAddresses BillingAddress[]
+
+  @@map("users")
+}
+
+model Product {
+  id   String @id @default(uuid())
+  name String @db.VarChar(255)
+
+  price        Float          @default(0)
+  description  String?        @db.Text
+  rating       Float          @default(0) @db.Float
+  category     Category?      @relation(fields: [categorySlug], references: [slug])
+  categorySlug String?
+  quantity     Int            @default(1)
+  stockStatus  String         @default("in stock")
+  orderItems   OrderItem[]
+  images       ProductImage[]
+  createdAt    DateTime       @default(now())
+
+  @@map("products")
+}
+
+model ProductImage {
+  id        String  @id @default(uuid())
+  url       String  @db.VarChar(255)
+  product   Product @relation(fields: [productId], references: [id])
+  productId String
+
+  @@map("product_images")
+}
+
+model Category {
+  id       String    @id @default(uuid())
+  name     String    @db.VarChar(255)
+  slug     String    @unique @default("") @db.VarChar(255)
+  products Product[]
+  image    String    @default("")
+
+  @@map("categories")
+}
+
+model OrderItem {
+  id      String  @id @default(uuid())
+  product Product @relation(fields: [productId], references: [id])
+
+  quantity   Int    @default(1)
+  totalPrice Float? @default(0)
+  order      Order  @relation(fields: [orderId], references: [id])
+  orderId    String
+
+  productId String
+
+  @@map("orderItems")
+}
+
+model Order {
+  id               String          @id @default(uuid())
+  user             User            @relation(fields: [userId], references: [id])
+  billingAddressId String?         @db.VarChar(255)
+  billingAddress   BillingAddress? @relation(fields: [billingAddressId], references: [id])
+  paymentRef       String?         @unique @db.VarChar(255)
+  totalPrice       Float
+  orderItems       OrderItem[]
+  paymentStatus    PaymentStatus   @default(PENDING)
+  userId           String
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("orders")
+}
+
+model BillingAddress {
+  id         String @id @default(uuid())
+  userId     String
+  user       User   @relation(fields: [userId], references: [id])
+  address    String
+  city       String @db.VarChar(100)
+  state      String @db.VarChar(100)
+  postalCode String @db.VarChar(20)
+  country    String @db.VarChar(100)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orders Order[]
+
+  @@map("billing_addresses")
+}
+
+enum UserRole {
+  ADMIN    @map("admin")
+  CUSTOMER @map("customer")
+  DRIVER   @map("driver")
+}
+
+enum PaymentStatus {
+  PENDING  @map("PENDING")
+  CANCELED @map("CANCELED")
+  NOTPAID  @map("NOTPAID")
+  PAID     @map("PAID")
+}

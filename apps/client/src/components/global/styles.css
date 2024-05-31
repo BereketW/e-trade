@@ -1,0 +1,9 @@
+.grid-full {
+  grid-template-columns: auto auto;
+}
+.black {
+  background-color: black;
+}
+.flex-half {
+  flex-basis: 250px;
+}
