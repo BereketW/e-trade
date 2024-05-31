@@ -33,8 +33,11 @@ const AboutExperience = () => {
       <div className="flex items-center justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-10">
           {datas.map(({ id, image, title, description }) => (
-            <div key={id} className="flex flex-col shadow-2xl p-8 hover:border hover:border-blue-400">
-              <Image src={image} />
+            <div
+              key={id}
+              className="flex flex-col shadow-2xl p-8 hover:border hover:border-blue-400"
+            >
+              <Image alt="image" src={image} />
               <p className="py-4 font-semibold text-xl">{title}</p>
               <p className="text-gray-600">{description}</p>
             </div>
