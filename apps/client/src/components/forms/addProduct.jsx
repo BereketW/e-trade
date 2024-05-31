@@ -197,7 +197,7 @@ export default function AddProduct({ categories }) {
             <div className="grid grid-cols-4 gap-4 mt-6 ">
               {imagePreviews.map((preview, index) => (
                 <div key={index} className="relative">
-                  <img src={preview} alt="Preview" className="w-20 h-20" />
+                  <Image src={preview} alt="Preview" className="w-20 h-20" />
                   <button
                     type="button"
                     onClick={() => handleRemoveImage(index)}

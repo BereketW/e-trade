@@ -84,7 +84,7 @@ export default async function page({ params }) {
           <div className="bg-white rounded p-4 mt-4">
             <h1 className="text-color-dark font-bold mb-4">Payment Method</h1>
             <div className="flex items-center gap-3">
-              <img
+              <Image
                 className="w-20 h-20 rounded shadow"
                 src="https://yt3.googleusercontent.com/wIzzYkCpUfshJPTg97GDX96ZUVZ7TTKtIOuKD2il7Xa9fXaEopTZFFQnUAr_figuZXy7pzV555w=s900-c-k-c0x00ffffff-no-rj"
                 alt=""

@@ -75,7 +75,11 @@ export default function ProductDetail({ singleProduct, children }) {
                 className="flex w-20 h-20 items-center rounded-md justify-center "
               >
                 {singleProduct.images ? (
-                  <img src={`${img.url}`} className="w-full h-full " />
+                  <Image
+                    alt="image"
+                    src={`${img.url}`}
+                    className="w-full h-full "
+                  />
                 ) : (
                   <Loader size={30} color="#777777" />
                 )}
