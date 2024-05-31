@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import firo from "./assets/firo.jpg";
+import firo from "./assets/Firo.jpg";
 import fitse from "./assets/Fitse.jpg";
 import beki from "./assets/beki.jpg";
 
