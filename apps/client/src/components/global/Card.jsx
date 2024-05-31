@@ -18,6 +18,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import Image from "next/image";
 
 // const categories = [
 //   {
@@ -106,7 +107,7 @@ export default function Card({ categories }) {
           <SwiperSlide key={category.id} className="m-10 w-1/2 h-1/2">
             <Link href={`/shop?category=${category?.slug}`}>
               <div className=" h-11/12  border rounded-xl">
-                <img
+                <Image
                   src={category?.image}
                   alt="image"
                   className="w-full h-40 object-cover rounded-t-xl"

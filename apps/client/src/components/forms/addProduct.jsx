@@ -5,6 +5,7 @@ import { createProduct } from "@app/client/data/products";
 import { FaCloud, FaRemoveFormat, FaTrash } from "react-icons/fa";
 import CategoryOption from "./CategoryOption";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AddProduct({ categories }) {
   const [imagePreviews, setImagePreviews] = useState([]);
@@ -176,9 +177,9 @@ export default function AddProduct({ categories }) {
                 </div>
                 {images.length > 0 && (
                   <div>
-                    <img
+                    <Image
                       src={imagePreviews[0]}
-                      alt=""
+                      alt="image previews"
                       className="w-[200px] h-[100px] object-cover object-center"
                     />
                   </div>

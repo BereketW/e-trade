@@ -9,7 +9,7 @@ import { PiCarProfileLight } from "react-icons/pi";
 import { VscListUnordered } from "react-icons/vsc";
 import { CiLocationArrow1 } from "react-icons/ci";
 
-const page = () => {
+const Page = () => {
   const [state, setState] = useState({
     options: {
       chart: {
@@ -177,4 +177,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

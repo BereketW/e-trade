@@ -1,5 +1,6 @@
 import CurrencyFormat from "@app/client/components/global/currencyFormater";
 import { getOneOrder } from "@app/client/data/order.service";
+import Image from "next/image";
 import React from "react";
 
 export default async function page({ params }) {
@@ -22,7 +23,7 @@ export default async function page({ params }) {
               className="flex gap-6 odd:bg-[#F7FAFC]  p-3 rounded hover:bg-[#EDF1F5] transition-all ease-in-out duration-200  items-center justify-between"
             >
               <div className="flex items-center gap-2">
-                <img
+                <Image
                   src={item.product.images[0].url}
                   alt=""
                   className="w-14 h-14 rounded"

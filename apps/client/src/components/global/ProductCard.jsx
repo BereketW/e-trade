@@ -8,6 +8,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { useWishlist } from "@app/client/store/wishlist";
 import CurrencyFormat from "./currencyFormater";
 import Link from "next/link";
+import Image from "next/image";
 // import { BsCart2 } from "react-icons/bs";
 // import { getOneProduct } from "@app/client/data/products";
 
@@ -37,7 +38,7 @@ export default function ProductCard({ product, children }) {
         <div className="p-4">
           {product.images[0].url ? (
             <Link href={`shop/${product.id}`}>
-              <img
+              <Image
                 src={product.images[0].url}
                 alt="image"
                 className="scale-110 group-hover:scale-125 transition-all ease-in-out duration-300 w-full object-contain h-36"

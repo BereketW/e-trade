@@ -17,10 +17,10 @@ const Welcome = () => {
         <div className="absolute  top-20 right-[14rem]">
           <p className="text-[#FF0003] font-semibold">
             <SiHomebridge size={20} className="text-[#FF0003]" />
-            Don't Miss !
+            Don&apos;t Miss !
           </p>
           <p className=" w-full text-black font-bold text-5xl ">
-            Let's Start Shopping Today
+            Let&apos;s Start Shopping Today
           </p>
           <div className="flex  top-[7rem] absolute gap-4  text-gray-600 ">
             <div className="flex items-center p-6 w-20 h-20 font-semibold text-md flex-col rounded-full  bg-white text-gray-600 justify-center">

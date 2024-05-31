@@ -5,6 +5,7 @@ import { MdFavoriteBorder } from "react-icons/md";
 import { BsCart2, BsCart3 } from "react-icons/bs";
 import { useCart } from "@app/client/store/cart";
 import { useWishlist } from "@app/client/store/wishlist";
+import Image from "next/image";
 export default function CartItem({ product }) {
   const { addToCart } = useCart();
   const { addToWishlist } = useWishlist();
@@ -14,7 +15,7 @@ export default function CartItem({ product }) {
       className="flex mb-5 relative justify-between gap-4 w-full border border-color-light shadow-sm p-6 rounded"
     >
       <div className="flex gap-10">
-        <img className="w-20 h-20" src={`${product.image}`} alt="" />
+        <Image className="w-20 h-20" src={`${product.image}`} alt="image" />
         <div className="flex flex-col gap-1">
           <Rating rating={Math.ceil(product.rating.rate) || 4} />
           <h6 className="text-sm text-color-body">

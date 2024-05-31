@@ -6,6 +6,7 @@ import CurrencyFormat from "./currencyFormater";
 import CountQuantity from "./CountQuantity";
 import "./styles.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function ViewCart() {
   const { cartProducts, removeProductFromCart } = useCart();
@@ -42,7 +43,11 @@ export default function ViewCart() {
                     key={product.id}
                     className="grid text-sm items-center grid-cols-6 col-start-1 col-  mx-auto p-4 border border-color-light"
                   >
-                    <img src={product.imageUrl} alt="image" className="w-20" />
+                    <Image
+                      src={product.imageUrl}
+                      alt="image"
+                      className="w-20"
+                    />
                     <p>{product.name.slice(0, 20)}</p>
                     <CountQuantity product={product} />
                     <p>

@@ -5,6 +5,7 @@ import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import CurrencyFormat from "./currencyFormater";
+import Image from "next/image";
 
 export default function WishlistItem({ item }) {
   const { removeFromWishlist } = useWishlist();
@@ -19,7 +20,7 @@ export default function WishlistItem({ item }) {
         >
           <X />
         </Link>
-        <img src={item.image} className="w-20 h-20" />
+        <Image alt="wishlist image" src={item.image} className="w-20 h-20" />
         {item?.name.slice(0, 20)}
       </div>
       <h1 className="text-custom-gray ">

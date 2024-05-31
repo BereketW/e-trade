@@ -12,6 +12,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
+import Image from "next/image";
 
 const userReview = [
   {
@@ -102,7 +103,7 @@ export default function Feedback() {
 function UserDetail({ reviewItem }) {
   return (
     <div className="flex mt-5 gap-3">
-      <img
+      <Image
         src={`${reviewItem.avatar}`}
         alt="Firomsa"
         className="w-16 h-16 rounded-full"

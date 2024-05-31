@@ -1,10 +1,11 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 export default function Message() {
   return (
     <div className="flex justify-between mt-10 px-16">
       <div className="flex gap-4 items-center">
-        <img
+        <Image
           className="w-11 h-10"
           src={`https://new.axilthemes.com/demo/template/etrade/assets/images/icons/service1.png`}
           alt=""
@@ -15,7 +16,7 @@ export default function Message() {
         </div>
       </div>
       <div className="flex gap-4 items-center">
-        <img
+        <Image
           className="w-11 h-10"
           src={`https://new.axilthemes.com/demo/template/etrade/assets/images/icons/service2.png`}
           alt=""
@@ -26,7 +27,7 @@ export default function Message() {
         </div>
       </div>
       <div className="flex gap-4 items-center">
-        <img
+        <Image
           className="w-11 h-10"
           src={`https://new.axilthemes.com/demo/template/etrade/assets/images/icons/service3.png`}
           alt=""
@@ -37,7 +38,7 @@ export default function Message() {
         </div>
       </div>
       <div className="flex gap-4 items-center">
-        <img
+        <Image
           className="w-11 h-10"
           src={`https://new.axilthemes.com/demo/template/etrade/assets/images/icons/service4.png`}
           alt=""

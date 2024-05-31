@@ -19,6 +19,7 @@ const GetInTouch = ({ reverse }) => {
       >
         <div>
           <Image
+            alt="image"
             className="size-[24rem] rounded-lg object-cover"
             src={reverse ? about02 : about03}
           />

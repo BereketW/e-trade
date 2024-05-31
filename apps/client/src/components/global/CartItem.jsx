@@ -4,11 +4,12 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { useCart } from "@app/client/store/cart";
 import CountQuantity from "./CountQuantity";
 import Rating from "./Rating";
+import Image from "next/image";
 export default function CartItem({ product }) {
   const { removeFromCart } = useCart();
   return (
     <div key={product.id} className="flex mb-5 relative items-center gap-4">
-      <img className="w-20 h-20" src={product.images[0]?.url} alt="" />
+      <Image className="w-20 h-20" src={product.images[0]?.url} alt="" />
 
       <div className="flex flex-col gap-1">
         <Rating rating={Math.ceil(product.rating) || 4} />

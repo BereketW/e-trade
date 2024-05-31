@@ -1,4 +1,5 @@
 import { getOneProduct } from "@app/client/data/products";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -7,7 +8,7 @@ export default async function Orders({ orders }) {
     return (
       <div className="flex items-center flex-col gap-4 justify-center w-full">
         <h1 className="font-semibold text-xl text-color-light">
-          You don't have any orders on your order list
+          You don&apos;t have any orders on your order list
         </h1>
         <Link
           href={"/shop"}
@@ -33,7 +34,11 @@ export default async function Orders({ orders }) {
             key={order.id}
             className="flex font-medium  p-5 border-b-2 border-color-lighter items-center justify-between text-sm"
           >
-            <img src={``} className="w-10 h-10 text-color-chart03" />
+            <Image
+              alt="order image"
+              src={``}
+              className="w-10 h-10 text-color-chart03"
+            />
             <h2>{order.createdAt}</h2>
             <h2>{order.paymentStatus}</h2>
             <h2 className="py-4">

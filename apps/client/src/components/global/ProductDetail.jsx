@@ -23,6 +23,7 @@ import CountQuantity from "./CountQuantity";
 import { useCount } from "@app/client/store/count";
 import { BsCart2 } from "react-icons/bs";
 import Loader from "./Loader";
+import Image from "next/image";
 
 export default function ProductDetail({ singleProduct, children }) {
   const { addToCart, cartProducts } = useCart();
@@ -47,7 +48,8 @@ export default function ProductDetail({ singleProduct, children }) {
             {singleProduct.images.map((img) => (
               <SwiperSlide key={img.id} className="w-10 relative">
                 {singleProduct.images ? (
-                  <img
+                  <Image
+                    alt="product image"
                     src={`${img.url}`}
                     className=" absolute top-1/2 left-1/2 -translate-x-1/2 object-fill h-full rounded-md object-center -translate-y-1/2"
                   />

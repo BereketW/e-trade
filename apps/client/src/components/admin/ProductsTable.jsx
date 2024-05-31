@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { FaTrash } from "react-icons/fa";
 
@@ -22,10 +23,10 @@ export default function ProductsTable({ filteredProducts }) {
             className="md:text-base sm:text-sm text-xs border-b p-3 odd:bg-[#f6f8fbcc] hover:bg-[#EDF1F5] transition-all ease-out duration-300"
           >
             <td className="px-4 mr-19 py-2 whitespace-nowrap font-bold flex items-center gap-2">
-              <img
+              <Image
                 src={product.images[0].url}
                 className="w-14 h-14 rounded shadow"
-                alt=""
+                alt="product image"
               />
               {product.name.slice(0, 10)}..
             </td>

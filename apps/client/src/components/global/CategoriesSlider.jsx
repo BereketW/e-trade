@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Card from "./Card";
+import Image from "next/image";
 
 // import required modules
 
@@ -70,7 +71,7 @@ export default function CategoriesSlider({ product }) {
     <Card products={categories}>
       <Link href={`/shop?product=${product.slug}`}>
         <div className=" h-11/12  border rounded-xl">
-          <img
+          <Image
             src={product.image}
             alt="image"
             className="w-full rounded-t-xl"

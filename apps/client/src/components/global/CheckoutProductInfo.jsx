@@ -2,6 +2,7 @@
 import React from "react";
 import { useCart } from "@app/client/store/cart";
 import CurrencyFormat from "./currencyFormater";
+import Image from "next/image";
 export default function CheckoutProductInfo() {
   const { cartProducts } = useCart();
   const subTotalPrice = cartProducts
@@ -32,7 +33,11 @@ export default function CheckoutProductInfo() {
             className="flex justify-between border-b py-4 border-gray-300"
           >
             <h1 className="flex gap-3 items-center">
-              <img className="w-8 h-8" src={`${product.imageUrl}`} />
+              <Image
+                alt="product name"
+                className="w-8 h-8"
+                src={`${product.imageUrl}`}
+              />
               {product.name.slice(0, 35)}
             </h1>
             <CurrencyFormat amount={product.totalPrice} />

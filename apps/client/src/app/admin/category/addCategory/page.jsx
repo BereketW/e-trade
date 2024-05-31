@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { createCategory } from "@app/client/data/categories"; // Ensure this function exists in your data fetching module
 import { FaCloud, FaTrash } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AddCategory() {
   const [imagePreview, setImagePreview] = useState("");
@@ -121,7 +122,7 @@ export default function AddCategory() {
               </div>
               {image && (
                 <div className="mt-4 relative">
-                  <img
+                  <Image
                     src={imagePreview}
                     alt="Preview"
                     className="w-[200px] h-[100px] object-cover object-center"

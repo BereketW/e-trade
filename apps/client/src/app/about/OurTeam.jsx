@@ -36,6 +36,7 @@ const OurTeam = () => {
               className="shadow-2xl flex flex-col items-center justify-center rounded-3xl  p-6"
             >
               <Image
+                alt="image"
                 className="size-40 object-contain rounded-full"
                 src={image}
               />

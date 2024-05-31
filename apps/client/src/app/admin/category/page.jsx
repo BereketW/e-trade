@@ -1,5 +1,6 @@
 // import AddProduct from "@app/client/components/forms/addProduct";
 import { getManyCategories } from "@app/client/data/categories";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { CiSearch } from "react-icons/ci";
@@ -64,9 +65,9 @@ export default async function page() {
                 >
                   <td className="px-4 text-start py-2 whitespace-nowrap flex items-center gap-3">
                     {" "}
-                    <img
+                    <Image
                       src={category.image}
-                      alt=""
+                      alt="category image"
                       className="w-10 h-10 object-cover rounded-md"
                     />
                     {category.name}

@@ -13,6 +13,7 @@ import {
 } from "../ui/sheet";
 import React, { useState } from "react";
 import { createProduct } from "@app/client/data/products";
+import Image from "next/image";
 
 // import SearchedProductCard from "./SearchedProductCard";
 // import { CiSearch } from "react-icons/ci";
@@ -153,7 +154,7 @@ export default function AddProduct() {
               </div>
               <div>
                 {imagePreviews.map((preview, index) => (
-                  <img
+                  <Image
                     key={index}
                     src={preview}
                     alt="Preview"
